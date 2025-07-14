@@ -1,0 +1,117 @@
+/* styles/Hero.module.css */
+
+.heroContainer {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  position: relative;
+  z-index: 0;
+  max-width: 1440px;
+  margin: 0 auto;
+}
+
+@media (min-width: 1280px) {
+  .heroContainer {
+    flex-direction: row;
+  }
+}
+
+.heroLeft {
+  flex: 1;
+  padding-top: 9rem;
+  padding-left: 1.5rem;
+  padding-right: 1.5rem;
+}
+
+@media (min-width: 640px) {
+  .heroLeft {
+    padding-left: 4rem;
+    padding-right: 4rem;
+  }
+}
+
+.heroTitle {
+  font-size: 50px;
+  font-weight: 800;
+}
+
+@media (min-width: 640px) {
+  .heroTitle {
+    font-size: 64px;
+  }
+}
+
+@media (min-width: 1536px) {
+  .heroTitle {
+    font-size: 72px;
+  }
+}
+
+.heroSubtitle {
+  font-size: 27px;
+  color: #737373; /* neutral-500 */
+  font-weight: 300;
+  margin-top: 1.25rem;
+}
+
+.heroButton {
+  background-color: #1e40af; /* primary-blue */
+  color: white;
+  border-radius: 9999px;
+  margin-top: 2.5rem;
+  padding: 0.75rem 1.5rem;
+  border: none;
+  cursor: pointer;
+}
+
+.heroRight {
+  flex: 1.5;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+  width: 100%;
+  height: 100vh;
+}
+
+.heroImageContainer {
+  position: relative;
+  width: 90%;
+  height: 590px;
+  z-index: 0;
+}
+
+@media (min-width: 1280px) {
+  .heroImageContainer {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.heroImage {
+  object-fit: contain;
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.heroBgOverlay {
+  position: absolute;
+  top: -6rem;
+  right: -25%;
+  background-image: url('/bg-hero.png');
+  background-repeat: round;
+  z-index: -10;
+  width: 100%;
+  height: 590px;
+  overflow: hidden;
+}
+
+@media (min-width: 1280px) {
+  .heroBgOverlay {
+    top: -6rem;
+    right: -50%;
+    height: 100vh;
+  }
+}

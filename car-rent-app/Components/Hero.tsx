@@ -1,45 +1,116 @@
 "use client";
 
 import React from "react";
-import CustomButton from "./CustomButton";
 import Image from "next/image";
+import CustomButton from "./CustomButton";
 
 const Hero = () => {
   const handleScroll = () => {
-    alert("hello");
+    console.log("Explore Cars clicked!");
   };
 
   return (
-    <div className="flex xl:flex-row flex-col gap-5 relative z-0 max-w-[1440px] mx-auto">
-      {/* Left Section */}
-      <div className="flex-1 pt-36 sm:px-16 px-6">
-        <h1 className="2xl:text-[72px] sm:text-[64px] text-[50px] font-extrabold">
+    <section
+      style={{
+        display: "flex",
+        flexDirection: "row",
+        justifyContent: "space-between",
+        alignItems: "center",
+        padding: "4rem 2rem",
+        height: "100vh",
+        position: "relative",
+        overflow: "hidden",
+        background: "linear-gradient(to bottom, #ffffff, #f3f3f3)",
+      }}
+    >
+      {/* LEFT SIDE */}
+      <div style={{ flex: 1, zIndex: 2 }}>
+        <h1
+          style={{
+            fontSize: "3rem",
+            fontWeight: "800",
+            marginBottom: "1rem",
+            lineHeight: "1.2",
+            color: "#111827",
+          }}
+        >
           Find, book, or rent a car — quickly and easily!
         </h1>
-        <p className="text-[27px] text-neutral-500 font-light mt-5">
+        <p
+          style={{
+            fontSize: "1.125rem",
+            color: "#6B7280",
+            marginBottom: "2rem",
+            maxWidth: "500px",
+          }}
+        >
           Streamline your car rental experience with our effortless booking
           process.
         </p>
         <CustomButton
-          title="hello"
-          containerStyles="bg-primary-blue text-white rounded-full mt-10"
+          title="Explore Cars"
           handleClick={handleScroll}
+          containerStyles={{
+            backgroundColor: "#3563E9",
+            color: "#fff",
+            padding: "0.75rem 1.5rem",
+            fontSize: "1rem",
+            fontWeight: "500",
+            borderRadius: "9999px",
+            border: "none",
+            cursor: "pointer",
+            transition: "background-color 0.3s ease",
+          }}
         />
       </div>
 
-      {/* Right Section */}
-      <div className="xl:flex-[1.5] flex justify-end items-end w-full xl:h-screen">
-        <div className="relative xl:w-full w-[90%] xl:h-full h-[590px] z-0">
+      {/* RIGHT SIDE */}
+      <div
+        style={{
+          flex: 1,
+          position: "relative",
+          width: "100%",
+          height: "100%",
+        }}
+      >
+        {/* Blue Background Shape */}
+        <div
+          style={{
+            position: "absolute",
+            width: "400px",
+            height: "400px",
+            backgroundColor: "#3563E9",
+            borderRadius: "50%",
+            transform: "rotate(45deg)",
+            bottom: "0",
+            right: "0",
+            zIndex: 1,
+          }}
+        ></div>
+
+        {/* Car Image */}
+        <div
+          style={{
+            position: "absolute",
+            bottom: 0,
+            right: 0,
+            width: "100%",
+            height: "100%",
+            zIndex: 2,
+          }}
+        >
           <Image
             src="/hero.png"
-            alt="hero"
+            alt="Car"
             fill
-            className="object-contain"
+            style={{
+              objectFit: "contain",
+            }}
+            priority
           />
-          <div className="absolute xl:-top-24 xl:-right-1/2 -right-1/4 bg-hero-bg bg-repeat-round -z-10 w-full xl:h-screen h-[590px] overflow-hidden" />
         </div>
       </div>
-    </div>
+    </section>
   );
 };
 
